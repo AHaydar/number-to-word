@@ -21,3 +21,4 @@ Moreover, the main purpose to create the project is to learn the technology stac
     
         docker-compose up -d
 6. In your browser, navigate to http://number-to-word.local:8080/
+7. Run `composer install` in your working directory
