@@ -12,12 +12,13 @@ class ConverterController
 
     public function convert()
     {
-        $f = new \NumberFormatter("en", \NumberFormatter::SPELLOUT);
+        $language = $_POST['language'];
+        $f = new \NumberFormatter($language, \NumberFormatter::SPELLOUT);
         $number = $_POST['number'];
         $word = $f->format($_POST['number']);
 
         App::bind($_POST['number'], $word);
 
-        return view('index', compact(['word', 'number']));
+        return view('index', compact(['word', 'number', 'language']));
     }
 }
